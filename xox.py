@@ -56,8 +56,8 @@ class XOX:
     def printBoard(self):
         self._clearScreen()
         placer = [0,0,1,0,2]
-        for i,_list in enumerate(self.board):
-            for j, item in enumerate(_list):
+        for i,list_ in enumerate(self.board):
+            for j, item in enumerate(list_):
                 if i % 2 == 0 and j % 2 == 0:
                     print(self.inputs[placer[i]][placer[j]], end='')
                 print(item, end='')
@@ -65,31 +65,35 @@ class XOX:
 
     def _checkWinner(self, player):
         filterated = list(map(lambda x: list(map(lambda y: y == player, x)), self.inputs))
-        for i,_list in enumerate(filterated):
-            for j, item in enumerate(_list):
-                if item and _list[(j+1) % len(_list)] and _list[(j+2) % len(_list)]:
+        for i,list_ in enumerate(filterated):
+            for j, item in enumerate(list_):
+                if item and list_[(j+1) % len(list_)] and list_[(j+2) % len(list_)]:
                     return True
-                elif item and filterated[(i+1) % len(_list)][j] and filterated[(i+2) % len(_list)][j]:
+                elif item and filterated[(i+1) % len(list_)][j] and filterated[(i+2) % len(list_)][j]:
                     return True
-                elif ([i,j] in [[0,0],[1,1], [2,2]]) and (item and filterated[(i+1) % len(_list)][(j+1) % len(_list)] and filterated[(i+2) % len(_list)][(j+2) % len(_list)]):
+                elif ([i,j] in [[0,0],[1,1], [2,2]]) and (item and filterated[(i+1) % len(list_)][(j+1) % len(list_)] and filterated[(i+2) % len(list_)][(j+2) % len(list_)]):
                     return True
-                elif ([i,j] in [[0,2],[1,1], [0,2]]) and (item and filterated[(i-1) % len(_list)][(j-1) % len(_list)] and filterated[(i-2) % len(_list)][(j-2) % len(_list)]):
+
+                # [[0,2], [1,1], [0,2]] changed to [[0,2], [1,1], [2,0]]
+                # [(i-1) % len(list_)][(j   -    1) % len(list_)] changed to [(i-1) % len(list_)][(j   +   1) % len(list_)]
+                elif ([i,j] in [[0,2],[1,1], [2,0]]) and (item and filterated[(i-1) % len(list_)][(j+1) % len(list_)] and filterated[(i-2) % len(list_)][(j+2) % len(list_)]):
                     return True
         return False
 
     def _check(self, player):
         filterated = list(map(lambda x: list(map(lambda y: y == player, x)), self.inputs))
-        for i,_list in enumerate(filterated):
-            for j, item in enumerate(_list):
-                if item and _list[(j+1) % len(_list)] and self.inputs[i][(j+2) % len(_list)] == self.empty:
-                    return (i, (j+2) % len(_list))
-                elif item and filterated[(i+1) % len(_list)][j] and self.inputs[(i+2) % len(_list)][j] == self.empty:
-                    return ((i+2) % len(_list), j)
-                elif ([i,j] in [[0,0],[1,1], [2,2]]) and (item and filterated[(i+1) % len(_list)][(j+1) % len(_list)] and self.inputs[(i+2) % len(_list)][(j+2) % len(_list)] == self.empty):
-                    return ((i+2) % len(_list), (j+2) % len(_list))
-                elif ([i,j] in [[0,2],[1,1], [0,2]]) and (item and filterated[(i-1) % len(_list)][(j-1) % len(_list)] and self.inputs[(i-2) % len(_list)][(j-2) % len(_list)] == self.empty):
-                    return ((i-2) % len(_list), (j-2) % len(_list))
-
+        for i,list_ in enumerate(filterated):
+            for j, item in enumerate(list_):
+                if item and list_[(j+1) % len(list_)] and self.inputs[i][(j+2) % len(list_)] == self.empty:
+                    return (i, (j+2) % len(list_))
+                elif item and filterated[(i+1) % len(list_)][j] and self.inputs[(i+2) % len(list_)][j] == self.empty:
+                    return ((i+2) % len(list_), j)
+                elif ([i,j] in [[0,0],[1,1], [2,2]]) and (item and filterated[(i+1) % len(list_)][(j+1) % len(list_)] and self.inputs[(i+2) % len(list_)][(j+2) % len(list_)] == self.empty):
+                    return ((i+2) % len(list_), (j+2) % len(list_))
+                # [[0,2], [1,1], [0,2]] changed to [[0,2], [1,1], [2,0]]
+                elif ([i,j] in [[0,2],[1,1], [2,0]]) and (item and filterated[(i-1) % len(list_)][(j-1) % len(list_)] and self.inputs[(i-2) % len(list_)][(j-2) % len(list_)] == self.empty):
+                    return ((i-2) % len(list_), (j-2) % len(list_))
+        return None
 
     def runAI(self):
         for player in [self.ai, self.player]:
@@ -98,9 +102,11 @@ class XOX:
                 self.setOnBoard(self.ai, *result)
                 return
         else:
-            while True:
-                if self.setOnBoard(self.ai, random.randint(0,2), random.randint(0,2)):
-                    return
+            # condition added
+            if not self.hasWinner:
+                while True:
+                    if self.setOnBoard(self.ai, random.randint(0,2), random.randint(0,2)):
+                        return
 
 if __name__ == '__main__':
     xox = XOX(parse_args())
@@ -110,7 +116,9 @@ if __name__ == '__main__':
             result = xox.getUserInput()
             if xox.setOnBoard(xox.player, *result):
                 break
-        if xox.player == 'X':
+
+        # check winner before run AI
+        if not xox.hasWinner and xox.player == 'X':
             xox.runAI()
     else:
         xox.printBoard()
