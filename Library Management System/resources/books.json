@@ -1,0 +1,335 @@
+[
+    {
+        "uuid": "03d462ed-dbac-43b4-8a66-c3cfaf47245a",
+        "name": "The Hitchhiker's Guide To The Galaxy",
+        "author": "Douglas Adams",
+        "available": false,
+        "issue_date": "2024/06/26 16:55:12",
+        "expire_date": "2024/07/09 16:55:12",
+        "number_of_readings": 17
+    },
+    {
+        "uuid": "f07abcb2-1f4b-457b-a856-cdff22f7acfc",
+        "name": "Watership Down",
+        "author": "Richard Adams",
+        "available": true,
+        "issue_date": null,
+        "expire_date": null,
+        "number_of_readings": 51
+    },
+    {
+        "uuid": "a74e8e90-2b3b-4c53-a166-8dfb3b2783b1",
+        "name": "The Five People You Meet in Heaven",
+        "author": "Mitch Albom",
+        "available": true,
+        "issue_date": null,
+        "expire_date": null,
+        "number_of_readings": 75
+    },
+    {
+        "uuid": "d5feecd6-b41a-4d6e-bd7a-ad8eeed5b5bf",
+        "name": "Speak",
+        "author": "Laurie Halse Anderson",
+        "available": true,
+        "issue_date": null,
+        "expire_date": null,
+        "number_of_readings": 5
+    },
+    {
+        "uuid": "d09d6221-dd8f-4667-a4e9-2f063ee37f5d",
+        "name": "I Know Why the Caged Bird Sings",
+        "author": "Maya Angelou",
+        "available": true,
+        "issue_date": null,
+        "expire_date": null,
+        "number_of_readings": 74
+    },
+    {
+        "uuid": "4ed1dd74-bd51-40ac-9ccf-3a785535b4d1",
+        "name": "Thirteen Reasons Why",
+        "author": "Jay Asher",
+        "available": false,
+        "issue_date": "2024/06/18 16:55:12",
+        "expire_date": "2024/07/15 16:55:12",
+        "number_of_readings": 96
+    },
+    {
+        "uuid": "d97829d7-1700-45dd-b143-1c14a793b334",
+        "name": "Foundation Series",
+        "author": "Isaac Asimov",
+        "available": true,
+        "issue_date": null,
+        "expire_date": null,
+        "number_of_readings": 16
+    },
+    {
+        "uuid": "73cdca6a-3a2c-473f-b7f4-7e940c4aa02e",
+        "name": "The Sisterhood of the Travelling Pants",
+        "author": "Ann Brashares",
+        "available": true,
+        "issue_date": null,
+        "expire_date": null,
+        "number_of_readings": 24
+    },
+    {
+        "uuid": "e44696ef-75f2-4ae8-86d7-3829fc755498",
+        "name": "A Great and Terrible Beauty",
+        "author": "Libba Bray",
+        "available": false,
+        "issue_date": "2024/06/08 16:55:12",
+        "expire_date": "2024/07/04 16:55:12",
+        "number_of_readings": 45
+    },
+    {
+        "uuid": "531ddc83-0e80-4b38-80b5-367d0b4c8880",
+        "name": "The Da Vinci Code",
+        "author": "Dan Brown",
+        "available": true,
+        "issue_date": null,
+        "expire_date": null,
+        "number_of_readings": 30
+    },
+    {
+        "uuid": "6d5e4550-f563-4f32-9b18-58a154c4148e",
+        "name": "The Princess Diaries",
+        "author": "Meg Cabot",
+        "available": true,
+        "issue_date": null,
+        "expire_date": null,
+        "number_of_readings": 92
+    },
+    {
+        "uuid": "b5e81d53-52f2-4ac1-9470-607fb6acbc75",
+        "name": "Ender's Game",
+        "author": "Orson Scott Card",
+        "available": false,
+        "issue_date": "2024/06/25 16:55:12",
+        "expire_date": "2024/07/17 16:55:12",
+        "number_of_readings": 67
+    },
+    {
+        "uuid": "43ac4c9d-5002-44b7-873d-057d2aef6847",
+        "name": "The Hunt for Red October",
+        "author": "Tom Clancy",
+        "available": false,
+        "issue_date": "2024/06/17 16:55:12",
+        "expire_date": "2024/07/14 16:55:12",
+        "number_of_readings": 49
+    },
+    {
+        "uuid": "f50ad8e7-c795-48d4-8343-89ba6d86ff98",
+        "name": "The Hunger Games",
+        "author": "Suzanne Collins",
+        "available": true,
+        "issue_date": null,
+        "expire_date": null,
+        "number_of_readings": 12
+    },
+    {
+        "uuid": "932d5762-7280-4729-a198-b7d1debcaf5c",
+        "name": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "available": false,
+        "issue_date": "2024/06/02 16:55:12",
+        "expire_date": "2024/07/28 16:55:12",
+        "number_of_readings": 8
+    },
+    {
+        "uuid": "c72ad58e-cc5c-42fa-bde7-43cf8f3b6708",
+        "name": "Ranger's Apprentice Series",
+        "author": "John Flanagan",
+        "available": true,
+        "issue_date": null,
+        "expire_date": null,
+        "number_of_readings": 22
+    },
+    {
+        "uuid": "10fd18ff-4a79-4c78-9083-787445da6c45",
+        "name": "Inkheart",
+        "author": "Cornelia Funke",
+        "available": true,
+        "issue_date": null,
+        "expire_date": null,
+        "number_of_readings": 36
+    },
+    {
+        "uuid": "f12f3d49-c524-4bc7-8db0-11f3a2eac585",
+        "name": "Neuromancer",
+        "author": "William Gibson",
+        "available": false,
+        "issue_date": "2024/06/29 16:55:12",
+        "expire_date": "2024/07/23 16:55:12",
+        "number_of_readings": 33
+    },
+    {
+        "uuid": "eb056f64-7e8a-49fc-bb27-b7d06736e5da",
+        "name": "Lord of the Flies",
+        "author": "William Golding",
+        "available": true,
+        "issue_date": null,
+        "expire_date": null,
+        "number_of_readings": 85
+    },
+    {
+        "uuid": "4d7c0c91-55d8-4b18-8fe6-1e798b1c7522",
+        "name": "The Princess Bride",
+        "author": "William Goldman",
+        "available": false,
+        "issue_date": "2024/06/20 16:55:12",
+        "expire_date": "2024/07/05 16:55:12",
+        "number_of_readings": 52
+    },
+    {
+        "uuid": "870f96f5-cb90-4f93-9f93-1761ebd1513d",
+        "name": "Dinotopia: A Land Apart from Time",
+        "author": "James Gurney",
+        "available": true,
+        "issue_date": null,
+        "expire_date": null,
+        "number_of_readings": 41
+    },
+    {
+        "uuid": "158e2d7c-4d02-4988-a116-e4dbdcd865f8",
+        "name": "Far North",
+        "author": "Will Hobbs",
+        "available": true,
+        "issue_date": null,
+        "expire_date": null,
+        "number_of_readings": 31
+    },
+    {
+        "uuid": "fa3d3a3b-0c47-4e92-a45f-e2ef50029588",
+        "name": "Practical Magic",
+        "author": "Alice Hoffman",
+        "available": false,
+        "issue_date": "2024/06/28 16:55:12",
+        "expire_date": "2024/07/11 16:55:12",
+        "number_of_readings": 3
+    },
+    {
+        "uuid": "53b36653-3f0a-4b9b-bd87-4627ffeced55",
+        "name": "Brave New World",
+        "author": "Aldous Huxley",
+        "available": false,
+        "issue_date": "2024/06/06 16:55:12",
+        "expire_date": "2024/07/01 16:55:12",
+        "number_of_readings": 29
+    },
+    {
+        "uuid": "9e9b8d2e-00a3-4bb4-91b5-d95dc80961c0",
+        "name": "The Summer Tree",
+        "author": "Guy Gavriel Kay",
+        "available": true,
+        "issue_date": null,
+        "expire_date": null,
+        "number_of_readings": 97
+    },
+    {
+        "uuid": "3d9e2f39-d37a-4976-8888-2ddf02cfad40",
+        "name": "Flowers For Algernon",
+        "author": "Daniel Keyes",
+        "available": true,
+        "issue_date": null,
+        "expire_date": null,
+        "number_of_readings": 7
+    },
+    {
+        "uuid": "43b6c569-f5dc-4c1f-90f3-dc52b4a59fc0",
+        "name": "Owl in Love",
+        "author": "Patrice Kindl",
+        "available": false,
+        "issue_date": "2024/06/14 16:55:12",
+        "expire_date": "2024/07/10 16:55:12",
+        "number_of_readings": 26
+    },
+    {
+        "uuid": "d1cbd1ae-56d8-403a-99ac-139580176d08",
+        "name": "Naruto",
+        "author": "Masashi Kishimoto",
+        "available": false,
+        "issue_date": "2024/06/25 16:55:12",
+        "expire_date": "2024/07/03 16:55:12",
+        "number_of_readings": 55
+    },
+    {
+        "uuid": "c261a19c-3817-4ef3-8992-bba0879424a3",
+        "name": "Bleach (graphic novel)",
+        "author": "Tite Kubo",
+        "available": false,
+        "issue_date": "2024/06/15 16:55:12",
+        "expire_date": "2024/07/12 16:55:12",
+        "number_of_readings": 38
+    },
+    {
+        "uuid": "f7d2f27b-f65e-418e-b84b-5a4f2041a6a2",
+        "name": "Kiss the Dust",
+        "author": "Elizabeth Laird",
+        "available": false,
+        "issue_date": "2024/06/09 16:55:12",
+        "expire_date": "2024/07/07 16:55:12",
+        "number_of_readings": 86
+    },
+    {
+        "uuid": "7d19649c-7d54-4e6f-bf5a-7cd3568e0e1c",
+        "name": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "available": true,
+        "issue_date": null,
+        "expire_date": null,
+        "number_of_readings": 94
+    },
+    {
+        "uuid": "4fbb2b4c-4fd5-4c15-b9af-eacfa8c75dbf",
+        "name": "The Lion the Witch and the Wardrobe",
+        "author": "C S Lewis",
+        "available": false,
+        "issue_date": "2024/06/10 16:55:12",
+        "expire_date": "2024/07/04 16:55:12",
+        "number_of_readings": 13
+    },
+    {
+        "uuid": "2f5bc262-f1bc-4a09-9608-4aef819ff89d",
+        "name": "The Bourne Series",
+        "author": "Robert Ludlum",
+        "available": false,
+        "issue_date": "2024/06/12 16:55:12",
+        "expire_date": "2024/07/06 16:55:12",
+        "number_of_readings": 23
+    },
+    {
+        "uuid": "260b8c14-03a8-4202-81cf-1d4c76b40da8",
+        "name": "Life of Pi",
+        "author": "Yann Martel",
+        "available": false,
+        "issue_date": "2024/06/07 16:55:12",
+        "expire_date": "2024/07/08 16:55:12",
+        "number_of_readings": 25
+    },
+    {
+        "uuid": "b3c6d472-1ad8-4edb-9440-0eace71d7d82",
+        "name": "Breathless",
+        "author": "Lurlene McDaniel",
+        "available": true,
+        "issue_date": null,
+        "expire_date": null,
+        "number_of_readings": 63
+    },
+    {
+        "uuid": "432123ae-d518-40ab-a1a2-b01a875f9304",
+        "name": "Twilight Series",
+        "author": "Stephenie Meyer",
+        "available": true,
+        "issue_date": null,
+        "expire_date": null,
+        "number_of_readings": 95
+    },
+    {
+        "uuid": "7fc8a7f4-c6cb-47f7-9d6e-b6d6b449df86",
+        "name": "Sabriel",
+        "author": "Garth Nix",
+        "available": true,
+        "issue_date": null,
+        "expire_date": null,
+        "number_of_readings": 90
+    }
+]
