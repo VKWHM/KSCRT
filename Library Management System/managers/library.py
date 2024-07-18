@@ -125,12 +125,31 @@ class Library:
         Returns:
             list[str] | None: A list of UUIDs of the books that match the search, or None if no books were found.
         """
-        # TODO: Implement search functionality
-        # 1. Check if the attribute is valid
-        # 2. Display the books that match the search with specified attribute and value
-        # 3. Return the list of UUIDs of the books that match the search
-        # 4. If no books were found, print a message and return None
-        pass
+        results = []
+        if len(self.bList) != 0:
+            book = self.bList[0]
+            if attribute in book:
+                if isinstance(book[attribute], str):
+                    for book in self.bList:
+                        if book[attribute].lower() == value.lower():
+                            results.append(book["uuid"])
+                elif isinstance(book[attribute], bool):
+                    for book in self.bList:
+                        if book[attribute] == (value.lower() == 'true'):
+                            results.append(book["uuid"])
+                elif isinstance(book[attribute], int):
+                    for book in self.bList:
+                        if book[attribute] == int(value):
+                            results.append(book["uuid"])
+                else:
+                    raise ValueError(f"Unsupported attribute type: {type(book[attribute])}")
+
+        if results:
+            return results
+        else:
+            with self._printer as p:
+                p.error("No books found with {}: {}".format(attribute, value))
+                return None
 
     def _print_book(self, book: Book) -> None:
         """
@@ -154,11 +173,13 @@ class Library:
         Args:
             uuid (str): The UUID of the book to remove.
         """
-        # TODO: Implement remove functionality
-        # 1. Check if the UUID is valid
-        # 2. Remove the book with the specified UUID
-        # 3. Print a message indicating whether the book was removed successfully or not
-        pass
+        book = self._get_book(uuid)
+        with self._printer as p:
+            if book:
+                self.bList.remove(book)
+                p.print("Book removed successfully!")
+            else:
+                p.error("Invalid UUID!")
 
     def save(self, save_format: str) -> bool:
         """

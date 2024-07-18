@@ -1,20 +1,9 @@
+from datetime import datetime
 from os.path import join as join_path
 
 from managers.library import Library
-from utils import validate_integer, Printer
+from utils import validate_integer, validate_book_attributes, Printer
 
-"""
-Analyzing the code,
-The project file structure is as follows:
-    .
-    ├── main.py
-    ├── managers
-    │   ├── loaders.py
-    │   └── library.py
-    ├── resources
-    │   └── books.json
-    └── utils.py
-"""
 
 class MainApplication:
     def __init__(self, fileName: str = join_path('resources', 'books.json')):
@@ -96,27 +85,42 @@ class MainApplication:
         self.library.add_book(title, author)
 
     def search_book(self):
-        # TODO: Implement search functionality
-        # 1. Ask the user for the attribute to search by
-        # 2. Ask the user for the value of the attribute
-        # 3. Call the search_by method of the library instance
-        # 4. Display the books that match the search
-        pass
+        attribute = self.printer.input("Enter the attribute to search by (e.g., name, author, available): ",
+                                       validate_book_attributes)
+        value = self.printer.input(f"Enter the value for {attribute}: ")
+        uuids = self.library.search_by(attribute, value)
+        if uuids:
+            for id, uuid in self.bookIDs.items():
+                if uuid in uuids:
+                    self.printer.print(f"Book {id}:")
+                    with self.printer:
+                        self.library.display_book(uuid)
+        else:
+            self.printer.error("No books found!")
 
     def remove_book(self):
-        # TODO: Implement remove functionality
-        # 1. Ask the user for the ID of the book to remove
-        # 2. Display the book details
-        # 3. Ask the user for confirmation
-        # 4. Call the remove_book method of the library instance
-        pass
+        uuid = self.bookIDs[self.printer.input("Enter the ID of the book you want to remove: ",
+                                               lambda s: i if (i := validate_integer(s)) in self.bookIDs else None)]
+        self.library.display_book(uuid)
+        answer = self.printer.input("Are you sure you want to remove this book? (y/n): ",
+                                    lambda s: s.lower() if s.lower() in ["y", "n"] else None)
+        if answer == "y":
+            self.library.remove_book(uuid)
+        else:
+            self.printer.print("Book was not removed.")
 
     def display_outdated_issued_books(self):
-        # TODO: Implement display_outdated_issued_books functionality
-        # 1. Compare expire_date with the current date
-        # 2. Display the details of the outdated books
-        # 3. Display message if no book outdated
-        pass
+        today = datetime.now()
+        has_outdated_books = False
+        for book in self.library.bList:
+            if not book['available'] and datetime.strptime(book['expire_date'], "%Y/%m/%d %H:%M:%S") < today:
+                if not has_outdated_books:
+                    has_outdated_books = True
+                self.printer.print(f"Book {book['uuid']} is outdated!")
+                with self.printer:
+                    self.library.display_book(book['uuid'])
+        if not has_outdated_books:
+            self.printer.print("No outdated books found!")
 
     def clear_console(self):
         self.printer.clear()
