@@ -31,7 +31,7 @@ def is_place_okey(board: dict[int, int], place: tuple[int, int]) -> bool:
     return True
 
 
-def print_board(board) -> None:
+def print_board(board: dict[int, int]) -> None:
     """
     Check if specified place is not under attack
     Args:
@@ -46,7 +46,7 @@ def print_board(board) -> None:
     print("#" * 50)
 
 
-def main(board, row=1) -> dict[int, int]:
+def main(board: dict[int, int], row=1) -> dict[int, int]:
     """
     Solve the puzzle and return solution.
     Args:
